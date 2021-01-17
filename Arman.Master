@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Arman.master.cs" Inherits="Arman_Web_App.Arman" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Arman</title>
+
+    <link rel="shortcut icon" type="image/png" href="All necessary Images/Icon/Icon.png">
+
+
+    <%--bootstrap css--%> 
+    <link href="Web%20Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="Web%20Assets/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="Web%20Assets/fontawesome/css/all.css" rel="stylesheet" />
+    <%--Custom style css--%>
+    <link href="Web%20Assets/Custom/Style/style.css" rel="stylesheet" />
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="Web%20Assets/bootstrap/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="Web%20Assets/bootstrap/js/popper.min.js"></script>
+    <script src="Web%20Assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <%-- Datatables js --%>
+    <script src="Web%20Assets/datatables/js/jquery.dataTables.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%-- The Navigation Bar --%>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#262b2f">
+                <a class="navbar-nav navbar-center navbar-brand" href="HomePage.aspx">
+                   <h2 style ="color: #0c9b8e; font-size:40px;"><b>ARMAN</b></h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="HomePage.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="AboutUs.aspx">About Us</a>                     
+                        </li>
+                         <li class="nav-item active">
+                            <a class="nav-link" href="https://drive.google.com/drive/folders/1NaP6b--8pqm5B-daA2er32jW0Iu3-8Z8?usp=sharing" target="_blank">Downloads</a>                     
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton CssClass="nav-link" ID="linkLogIn" runat="server" OnClick="linkLogIn_Click"><i class="fas fa-sign-in-alt"></i> Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton CssClass="nav-link" ID="linkLogOut" runat="server" Visible="False" OnClick="linkLogOut_Click"><i class="fas fa-sign-out-alt"></i> Log out</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:Label CssClass="nav-link" ID="lblHelloUser" runat="server" Text="Hello, User!" Visible="False"></asp:Label>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <%-- Main Content Placeholder --%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <%-- Main Content Placeholder --%>
+
+        <footer class="footer">
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 text-center">
+                        <p class="pt-3">
+                            <asp:LinkButton ID="linkRoomManagement" CssClass="footerlinks pl-2 pr-2" runat="server" Visible="False" OnClick="linkRoomManagement_Click">Room Management</asp:LinkButton>
+                            <asp:LinkButton ID="linkAdminManagement" CssClass="footerlinks pl-2 pr-2" runat="server" Visible="False" OnClick="linkAdminManagement_Click">Admin Management</asp:LinkButton>
+                            <asp:Label ID="lblAdminPanel" runat="server" Text="Login to access the admin panel." CssClass="text-white"></asp:Label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="footer2" class="container-fluid text-center">
+                <p style="font-size:12px;">&copy All Rights Reserved. This project is made by students of Computer Science at SZABIST Dubai Campus as part of their Final Year Project. </p>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
